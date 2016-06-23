@@ -1,7 +1,7 @@
 #Mục lục
 
 
-## I. Log - What and Why?
+## I. Log trong Linux
 Một trong những điều khiến GNU/Linux trở thành một hệ điều hành tuyệt vời đó là các thông tin về mọi thứ diễn ra trong hệ thống, hay những ứng dụng
  chạy trên nó sẽ luôn được ghi lại. Mỗi khi có sự cố xảy ra - và thực sự nó rất thường xuyên xảy ra, thì những thông tin này trở nên vô cùng quý giá trong việc 
 khắc phục. Các thông tin trên thường được ghi lại dưới dạng văn bản, được gọi là cái file log.
@@ -26,9 +26,11 @@ lên tới vài trăm, vài nghìn máy chủ thì sao? Bạn không thể lúc 
 Các giải pháp log tập trung bắt đầu ra đời. Các server, bằng những cách khác nhau, sẽ đẩy các file log tại máy local tập trung về một máy log 
 server. Các giải pháp log tập trung không chỉ giúp người quản trị có thể quản lý log của các máy client một cách dễ dàng hơn. Mà còn giúp người 
 quản trị khai thác tối đa được lợi ích từ các file log.
+![NOTE7](images/i7.png)
 
-Dựa vào kinh nghiệm làm việc với các giải pháp log tập trung khác nhau, cũng như do đặc trưng và yêu cầu của hệ thống đặt ra, tôi xin được 
-giới thiệu giải pháp log tập trung đang được tôi tin dùng, đó là Graylog.
+
+Dựa vào các trải nghiệm khi làm việc với các giải pháp log tập trung khác nhau, cũng như do đặc trưng và yêu cầu của hệ thống OpenStack đặt ra,
+ tôi xin được giới thiệu giải pháp log tập trung đang được tôi tin dùng, đó là Graylog.
 
 ## II. Giới thiệu về Graylog
 ###1. Giới thiệu chung
@@ -47,6 +49,7 @@ lưu trữ như CEPH.
 - Cơ chế cảnh báo qua Email, Slack.
 - Khả năng tích hợp mạnh mẽ với các phần mềm khác như sử dụng cơ chế plugin, bạn có thể dễ dàng tích hợp Graylog với các LDAP, Graphite/Ganglia, 
 Logstash, NetFlow..
+
 Đặc biệt, không chỉ tự mình thu thập log, từ phiên bản 2.0, Graylog có thể đóng vai trò quản lý và trung gian. Với các server có sẵn có chế thu
 thập log như nx-log, hay logstash. Bạn có thể thu thập log từ chính các cơ chế có sẵn này. Graylog còn có thể làm trung gian, đẩy log thu được 
 tới bên thứ 3 sử dụng.
@@ -93,10 +96,6 @@ Bước 1 : Cài Graylog Server
  ```sh
  wget https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-server.sh
  ```
- - Với Client
- ```sh
- wget https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-collector.sh
- ```
 
  
  #####Một số *lưu ý* khi chạy script:
@@ -109,3 +108,6 @@ Bước 1 : Cài Graylog Server
  
  ![NOTE2](images/i2.png)
 
+ - Đăng nhập WEB Interface của Graylog
+ 
+ 
