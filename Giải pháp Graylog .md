@@ -50,6 +50,7 @@ thập log như nx-log, hay logstash. Bạn có thể thu thập log từ chính
 tới bên thứ 3 sử dụng.
 
 ###3. Cấu trúc
+![NOTE4](images/i4.png)
 Graylog có 4 thành phần chính :
 - Graylog Server:  Nhận, xử lý các bản tin và truyền thông với các thành phần khác – Cần CPU. 
 - Elasticsearch:	 Công cụ lưu trữ, tìm kiếm dữ liệu - tất cả phụ thuộc vào tốc độ I/O, Cần RAM. 
@@ -63,8 +64,12 @@ Dựa vào document của Graylog, có 2 mô hình logical được khuyến cá
 
 Mô hình Minimum setup. Cả 4 thành phần của Graylog được cấu hình trên cùng 1 con server.
 
+![NOTE5](images/i5.png)
+
 Mô hình Bigger production setup. Các thành phần của Graylog được tách riêng, và ta có thể triển khai các cơ chế như Load Balancer, HA, Cluster
 cho từng thành phần.
+
+![NOTE6](images/i6.png)
 
 ##III. Triển khai Graylog trên mô hình OpenStack Mitaka
 
