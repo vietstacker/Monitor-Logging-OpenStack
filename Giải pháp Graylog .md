@@ -28,6 +28,7 @@ server. Các giải pháp log tập trung không chỉ giúp người quản tr�
 quản trị khai thác tối đa được lợi ích từ các file log.
 
 **Mô hình log tập trung **
+
 ![NOTE7](images/i7.png)
 
 
