@@ -26,9 +26,10 @@ lên tới vài trăm, vài nghìn máy chủ thì sao? Bạn không thể lúc 
 Các giải pháp log tập trung bắt đầu ra đời. Các server, bằng những cách khác nhau, sẽ đẩy các file log tại máy local tập trung về một máy log 
 server. Các giải pháp log tập trung không chỉ giúp người quản trị có thể quản lý log của các máy client một cách dễ dàng hơn. Mà còn giúp người 
 quản trị khai thác tối đa được lợi ích từ các file log.
+
+**Mô hình log tập trung **
 ![NOTE7](images/i7.png)
 
-  Mô hình log tập trung
 
 Dựa vào các trải nghiệm khi làm việc với các giải pháp log tập trung khác nhau, cũng như do đặc trưng và yêu cầu của hệ thống OpenStack đặt ra,
  tôi xin được giới thiệu giải pháp log tập trung đang được tôi tin dùng, đó là Graylog.
