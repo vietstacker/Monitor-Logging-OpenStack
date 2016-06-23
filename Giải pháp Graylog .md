@@ -27,7 +27,7 @@ Các giải pháp log tập trung bắt đầu ra đời. Các server, bằng nh
 server. Các giải pháp log tập trung không chỉ giúp người quản trị có thể quản lý log của các máy client một cách dễ dàng hơn. Mà còn giúp người 
 quản trị khai thác tối đa được lợi ích từ các file log.
 
-**Mô hình log tập trung **
+** Mô hình log tập trung **
 
 ![NOTE7](images/i7.png)
 
