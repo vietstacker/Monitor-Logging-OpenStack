@@ -6,13 +6,15 @@ Một trong những điều khiến GNU/Linux trở thành một hệ điều h�
  chạy trên nó sẽ luôn được ghi lại. Mỗi khi có sự cố xảy ra - và thực sự nó rất thường xuyên xảy ra, thì những thông tin này trở nên vô cùng quý giá trong việc 
 khắc phục. Các thông tin trên thường được ghi lại dưới dạng văn bản, được gọi là cái file log.
 
-Tại sao ứng dụng của tôi không thể khởi động lên được?
-Có bao nhiêu người đã SSH vào server của tôi trong vòng 3 ngày qua?
-Ai đó hôm qua đã VPN vào hệ thống và lấy đi 1 tài liệu rất quan trọng, tôi có thể kiểm tra được đó là ai không?
-Tôi có thể thống kê được số VM được tạo, được xóa trên hệ thống cloud của tôi không?
+- Tại sao ứng dụng của tôi không thể khởi động lên được?
+- Có bao nhiêu người đã SSH vào server của tôi trong vòng 3 ngày qua?
+- Ai đó hôm qua đã VPN vào hệ thống và lấy đi 1 tài liệu rất quan trọng, tôi có thể kiểm tra được đó là ai không?
+- Tôi có thể thống kê được số VM được tạo, được xóa trên hệ thống cloud của tôi không?
 ...
 Cả trăm câu hỏi như vậy được đặt ra, và đều có chung một câu trả lời : 
+
 Hãy xem các file log !!!
+
 Các file log sẽ cho bạn tất cả các thông tin cần thiết, miễn là bạn biết được file log cần xem nằm ở đâu.
 
 Các file log được ghi dưới dạng văn bản, vậy nên bạn có thể vô cùng dễ dàng dùng các kỹ thuật đọc và tìm kiếm văn bản trong Linux để đọc log như 
