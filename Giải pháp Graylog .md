@@ -28,7 +28,7 @@ server. Các giải pháp log tập trung không chỉ giúp người quản tr�
 quản trị khai thác tối đa được lợi ích từ các file log.
 ![NOTE7](images/i7.png)
 
-        Mô hình log tập trung
+  Mô hình log tập trung
 
 Dựa vào các trải nghiệm khi làm việc với các giải pháp log tập trung khác nhau, cũng như do đặc trưng và yêu cầu của hệ thống OpenStack đặt ra,
  tôi xin được giới thiệu giải pháp log tập trung đang được tôi tin dùng, đó là Graylog.
