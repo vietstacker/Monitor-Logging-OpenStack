@@ -98,7 +98,8 @@ HDD: +60GB
  - Với Graylog Server
  
  ```sh
- wget https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-server.sh
+ wget https://raw.githubusercontent.com/manhdinh/ghichep-graylog/master/graylog/graylog-scripts/graylog-server.sh
+ bash graylog-server.sh
  ```
 
  
@@ -112,7 +113,7 @@ HDD: +60GB
  
  ![NOTE2](images/i2.png)
  
-####2.2. Hướng dẫn thu thập log của 2 node controller và compute
+####2.2. Cấu hình Input cho Graylog trên Web-interface
 
 #####Step1 : 
 
@@ -121,9 +122,37 @@ HDD: +60GB
  ![NOTE8](images/ii8.png)
 
 #####Step 2 : 
-- Tạo Input trên Graylog. Input cũng giống như 1 địa chỉ, giúp các máy Client tìm đến và giao tiếp với Graylog server.
+- Tạo Input trên Graylog. Input giống như một địa chỉ nhà, các bản tin từ máy client sẽ được cung cấp thông tin về địa chỉ đó để có thể đẩy được log về cho Graylog Server.
 
  ![NOTE9](images/i9.png)
  ![NOTE10](images/i10.png)
  ![NOTE11](images/i11.png)
+ Một số mục cần lưu ý khi nhập thông tin :
+
+•	Bind IP : Nhập IP của Graylog-Server  hoặc 0.0.0.0 ( Nếu đặt 0.0.0.0 Graylog server sẽ lắng nghe tất cả các bản tin trả về, chỉ đặt nếu đã thiết lập IPTables)
+
+•	Port : Chú ý đặt trùng với port thiết lập trong file config của máy Collector Client ( mặc định của cả 2 là 12201 )
+
+•	Bạn có thể tìm hiểu thêm về cơ chế đẩy log với TLS để sử dụng TLS với Graylog-Colector để bảo mật tốt hơn khi truyền các bản tin log.
+
+Sau khi launch xong input, cần có 2 phần của Input cần lưu ý
+
  ![NOTE12](images/i12.png)
+ 
+1 : Kiểm tra xem các bản tin log đã được đẩy về hay chưa. ( Các bản tin sẽ bắt đầu đẩy về sau khi graylog-collector service khởi động )
+
+2 : Quản lý các extractor được tạo ở phần searching. Tham khảo về [Extractorơ](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md) ở mục 6.2.
+
+####2.3. Cấu hình Graylog Collector trên 2 node Controller và Compute
+
+- Trên node Controller :
+```sh
+wget https://raw.githubusercontent.com/manhdinh/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
+bash graylog-collector.sh
+```
+Ta sẽ lấy một số log cơ bản và log của các service OpenStack trên máy Controller
+
+Nhập các thông số tại : /etc/graylog/collector/collector.conf
+
+- Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
+- Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về.

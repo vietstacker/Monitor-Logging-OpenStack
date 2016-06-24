@@ -1,1 +1,1 @@
-### Các script
+#Nơi chứa các script của Graylog!
