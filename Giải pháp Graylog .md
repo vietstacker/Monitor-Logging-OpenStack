@@ -132,6 +132,7 @@ Tôi sẽ triển khai phiên bản Graylog ổn định nhất là version 1.3
  ![NOTE9](images/i9.png)
  ![NOTE10](images/i10.png)
  ![NOTE11](images/i11.png)
+ 
  Một số mục cần lưu ý khi nhập thông tin :
 
 •	Bind IP : Nhập IP của Graylog-Server  hoặc 0.0.0.0 ( Nếu đặt 0.0.0.0 Graylog server sẽ lắng nghe tất cả các bản tin trả về, chỉ đặt nếu đã thiết lập IPTables)
@@ -149,8 +150,7 @@ Sau khi launch xong input, cần có 2 phần của Input cần lưu ý
 2 : Quản lý các extractor được tạo ở phần searching. Tham khảo về [Extractorơ](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md) ở mục 6.2.
 
 ####2.3. Cấu hình Graylog Collector trên 2 node Controller và Compute
-Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép bạn chỏ cụ thể data từ log files tới một Graylog Cluster. Collector có thể đọc log files local ( Ví dụ apache, openvpn,...), nói chung bất cứ dịch vụ nào có ghi log và cả trên Window.
-
+Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép bạn chỏ cụ thể data từ log files tới một Graylog Cluster. Collector có thể đọc log files local ( Ví dụ apache, openvpn,...), nói chung bất cứ dịch vụ nào có ghi log.
 - Trên node Controller :
 ```sh
 wget https://raw.githubusercontent.com/manhdinh/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
@@ -158,9 +158,10 @@ bash graylog-collector.sh
 ```
 Ta sẽ lấy một số log cơ bản và log của các service OpenStack trên máy Controller
 
-- Nhập các thông số tại : /etc/graylog/collector/collector.conf
+- Nhập các thông số tại : **/etc/graylog/collector/collector.conf**
+
 **File cấu hình mẫu** 
- ![NOTE13](images/i13.png)
+ ![NOTE13](images/ii13.png)
 
 	- Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
 	- Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về.
@@ -175,3 +176,46 @@ service graylog-collector start
 Log từ file **/var/log/apache2/access.log** đã được đẩy về Graylog 
 
  ![NOTE15](images/i15.png)
+ 
+- Trên node Compute :
+
+Làm tương tự theo các bước tại node Controller, chỉ thay đổi phần input tại file **/etc/graylog/collector/collector.conf**
+
+####2.3 Demo tạo Dashboard thống kê số đăng nhập Horizon thất bại, list ra user đăng nhập thất bại.
+
+**Step 1** : Tạo Dashboard có tên : Login Horizon Fail
+
+ ![NOTE17](images/i17.png)
+ 
+**Step 2** : Đăng nhập Horizon với 1 user không hợp lệ 
+
+ ![NOTE16](images/i16.png)
+ 
+**Step 3** : Trên Graylog WebInterface, xuất hiện bản tin với user đăng nhập thất bại. Ta sẽ sử dụng kỹ thuật Regular Expression để cắt lấy thông
+tin về user đăng nhập thất bại.
+
+ ![NOTE18](images/i18.png)
+ 
+Tham khảo link về sử dụng kỹ thuật [Regular Expression](https://github.com/hocchudong/ghichep-regex)
+
+**Step 4** : Sủ dụng regex để cắt lấy thông tin user
+
+ ![NOTE19](images/i19.png)
+
+**Step 5** : Login Horizon với user không hợp lệ 1 lần nữa để Field **UserLoginFail** được kích hoạt. Ta sẽ thống kê số đăng nhập và user đăng 
+nhập Horizon thất bại.
+
+ ![NOTE20](images/i20.png)
+ 
+**1** :Thêm thống kê số bản tin vào Dashboard **Login Horizon Fail**
+
+ ![NOTE21](images/i21.png)
+
+**2** : Thêm thống kê user đăng nhập horizon thất bại vào Dashboard **Login Horizon Fail**
+
+ ![NOTE22](images/i22.png)
+ ![NOTE23](images/i23.png)
+ 
+Dashboard được tạo :
+
+ ![NOTE24](images/i24.png)
