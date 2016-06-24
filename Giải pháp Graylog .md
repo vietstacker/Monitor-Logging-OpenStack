@@ -11,9 +11,8 @@ khắc phục. Các thông tin trên thường được ghi lại dưới dạng
 - Ai đó hôm qua đã VPN vào hệ thống và lấy đi 1 tài liệu rất quan trọng, tôi có thể kiểm tra được đó là ai không?
 - Tôi có thể thống kê được số VM được tạo, được xóa trên hệ thống cloud của tôi không?
 ...
-Cả trăm câu hỏi như vậy được đặt ra, và đều có chung một câu trả lời : 
 
-Hãy xem các file log !!!
+Cả trăm câu hỏi như vậy được đặt ra, và đều có chung một câu trả lời : **Hãy xem các file log !!!**
 
 Các file log sẽ cho bạn tất cả các thông tin cần thiết, miễn là bạn biết được file log cần xem nằm ở đâu.
 
