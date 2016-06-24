@@ -160,7 +160,7 @@ Ta sẽ lấy một số log cơ bản và log của các service OpenStack trê
 
 - Nhập các thông số tại : **/etc/graylog/collector/collector.conf**
 
-**File cấu hình mẫu** 
+**File cấu hình Collector mẫu của node Controller** 
  ![NOTE13](images/ii13.png)
 
 	- Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
@@ -222,7 +222,7 @@ Dashboard được tạo :
  
 - Trên node Compute, việc cấu hình tương tự như trên Controller, chỉ thay đổi phần input trong file collector.conf
 
-**File cấu hình mẫu** 
+**File cấu hình Collector mẫu của node Compute** 
 
  ![NOTE25](images/i25.png)
 
