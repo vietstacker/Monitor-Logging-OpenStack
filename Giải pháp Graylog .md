@@ -265,3 +265,5 @@ Dashboard được tạo :
 Kiểm tra các source log :
 
  ![NOTE25](images/i26.png)
+ 
+Tham khảo các bài viết nâng cao về Graylog theo link [sau](https://github.com/hocchudong/ghichep-graylog)
