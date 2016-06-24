@@ -199,8 +199,8 @@ Ta sẽ lấy một số log cơ bản và log của các service OpenStack trê
 
  ![NOTE13](images/ii13.png)
 
-	- Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
-	- Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về.
+<li>Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server. </li>
+<li>Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về. </li>
 
 - Khởi động dịch vụ Graylog-collect
 ```sh
