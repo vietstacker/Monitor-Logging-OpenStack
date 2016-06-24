@@ -144,6 +144,7 @@ Sau khi launch xong input, cần có 2 phần của Input cần lưu ý
 2 : Quản lý các extractor được tạo ở phần searching. Tham khảo về [Extractorơ](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md) ở mục 6.2.
 
 ####2.3. Cấu hình Graylog Collector trên 2 node Controller và Compute
+Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép bạn chỏ cụ thể data từ log files tới một Graylog Cluster. Collector có thể đọc log files local ( Ví dụ apache, openvpn,...), nói chung bất cứ dịch vụ nào có ghi log và cả trên Window.
 
 - Trên node Controller :
 ```sh
@@ -152,9 +153,16 @@ bash graylog-collector.sh
 ```
 Ta sẽ lấy một số log cơ bản và log của các service OpenStack trên máy Controller
 
-Nhập các thông số tại : /etc/graylog/collector/collector.conf
+- Nhập các thông số tại : /etc/graylog/collector/collector.conf
 **File cấu hình mẫu** 
  ![NOTE13](images/i13.png)
 
-- Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
-- Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về.
+	- Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
+	- Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về.
+
+- Khởi động dịch vụ Graylog-collect
+```sh
+service graylog-collector start
+```
+- Đăng nhập Horizon và kiểm tra log của apache được đẩy về Graylog-Server
+ ![NOTE14](images/i14.png)
