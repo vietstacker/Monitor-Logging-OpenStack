@@ -153,6 +153,8 @@ bash graylog-collector.sh
 Ta sẽ lấy một số log cơ bản và log của các service OpenStack trên máy Controller
 
 Nhập các thông số tại : /etc/graylog/collector/collector.conf
+**File cấu hình mẫu** 
+ ![NOTE13](images/i13.png)
 
 - Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server.
 - Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về.
