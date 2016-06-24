@@ -167,5 +167,6 @@ service graylog-collector start
 - Đăng nhập Horizon và kiểm tra log của apache được đẩy về Graylog-Server
  ![NOTE14](images/i14.png)
  
-Log từ file **/var/log/apache2/access.log* đã được đẩy về Graylog 
+Log từ file **/var/log/apache2/access.log** đã được đẩy về Graylog 
+
  ![NOTE15](images/i15.png)
