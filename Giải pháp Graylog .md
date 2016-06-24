@@ -220,9 +220,10 @@ Dashboard được tạo :
 
  ![NOTE24](images/i24.png)
  
-Trên node Compute, việc cấu hình tương tự như trên Controller, chỉ thay đổi phần input trong file collector.conf
+- Trên node Compute, việc cấu hình tương tự như trên Controller, chỉ thay đổi phần input trong file collector.conf
 
 **File cấu hình mẫu** 
+
  ![NOTE25](images/i25.png)
 
 Kiểm tra các source log :
