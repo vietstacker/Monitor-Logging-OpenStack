@@ -92,7 +92,8 @@ HDD: +60GB
 ###2. Chạy script
 #### Mô hình 
 ![Graylogmodel](images/i3.png)
-Bước 1 : Cài Graylog Server
+
+####2.1 : Cài Graylog Server
 
  - Với Graylog Server
  
@@ -110,13 +111,16 @@ Bước 1 : Cài Graylog Server
  - Ấn phím *ENTER* để tiếp tục
  
  ![NOTE2](images/i2.png)
-3. Hướng dẫn thu thập log của 2 node controller và compute
-Step1 : 
+ 
+####2.2. Hướng dẫn thu thập log của 2 node controller và compute
+
+#####Step1 : 
+
 - Đăng nhập WEB Interface của Graylog : http://IP-Graylogserver:9000
  
  ![NOTE8](images/i8.png)
 
-Step 2 : 
+#####Step 2 : 
 - Tạo Input trên Graylog. Input cũng giống như 1 địa chỉ, giúp các máy Client tìm đến và giao tiếp với Graylog server.
 
  ![NOTE9](images/i9.png)
