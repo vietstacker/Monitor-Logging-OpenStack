@@ -89,11 +89,11 @@ cho từng thành phần.
 Tôi sẽ triển khai phiên bản Graylog ổn định nhất là version 1.3
 
 ###1. Cấu hình máy Graylog Server
-OS: Ubuntu Server 14.04 64 bit
-RAM: 4GB
-CPU: 2x2
-NIC1: eth1: 172.16.69.0/24, gateway 172.16.69.1 (sử dụng card NAT hoặc Bridge VMware Workstation)
-HDD: +60GB
+<li>OS: Ubuntu Server 14.04 64 bit</li>
+<li>RAM: 4GB</li>
+<li>CPU: 2x2</li>
+<li>NIC1: eth1: 172.16.69.0/24, gateway 172.16.69.1 (sử dụng card NAT hoặc Bridge VMware Workstation)</li>
+<li>HDD: +60GB</li>
 ###2. Chạy script
 #### Mô hình 
 ![Graylogmodel](images/i3.png)
