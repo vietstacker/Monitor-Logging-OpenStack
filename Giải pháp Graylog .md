@@ -198,9 +198,11 @@ Ta sẽ lấy một số log cơ bản và log của các service OpenStack trê
 **File cấu hình Collector mẫu của node Controller** 
 
  ![NOTE13](images/ii13.png)
-
+ 
+<ul>
 <li>Tại : **server-url** và **host** : thay bằng địa chỉ của Graylog-server. </li>
 <li>Tại : **input** : khai báo thêm các file log mà bạn muốn lấy về. </li>
+</ul>
 
 - Khởi động dịch vụ Graylog-collect
 ```sh
