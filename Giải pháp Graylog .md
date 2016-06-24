@@ -110,7 +110,16 @@ Bước 1 : Cài Graylog Server
  - Ấn phím *ENTER* để tiếp tục
  
  ![NOTE2](images/i2.png)
+3. Hướng dẫn thu thập log của 2 node controller và compute
+Step1 : 
+- Đăng nhập WEB Interface của Graylog : http://IP-Graylogserver:9000
+ 
+ ![NOTE8](images/i8.png)
 
- - Đăng nhập WEB Interface của Graylog
- 
- 
+Step 2 : 
+- Tạo Input trên Graylog. Input cũng giống như 1 địa chỉ, giúp các máy Client tìm đến và giao tiếp với Graylog server.
+
+ ![NOTE9](images/i9.png)
+ ![NOTE10](images/i10.png)
+ ![NOTE11](images/i11.png)
+ ![NOTE12](images/i12.png)
