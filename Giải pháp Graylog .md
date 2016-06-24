@@ -1,10 +1,12 @@
 #Mục lục
 *	[I. Log Trong Linux](#log)
+
 *	[II. Giới thiệu về Graylog](#gt)
 	*	[1. Giới thiệu chung](#gtc)
 	*	[2. Đặc điểm nổi bật](#dd)
 	*	[3. Cấu trúc logical](#ct)
 	*	[4. Mô hình triển khai](#mh)
+	
 *	[III. Triển khai Graylog với mô hình OpenStack Mitaka](#tk)
 	*	[1. Cấu hình máy Graylog Server](#ch)
 	*	[2. Chạy script](#sc)
