@@ -1,7 +1,19 @@
 #Mục lục
-
-
+*	[I. Log Trong Linux](#log)
+*	[II. Giới thiệu về Graylog](#gt)
+	*	[1. Giới thiệu chung](#gtc)
+	*	[2. Đặc điểm nổi bật](#dd)
+	*	[3. Cấu trúc logical](#ct)
+	*	[4. Mô hình triển khai](#mh)
+*	[III. Triển khai Graylog với mô hình OpenStack Mitaka](#tk)
+	*	[1. Cấu hình máy Graylog Server](#ch)
+	*	[2. Chạy script](#sc)
+		*	[2.1. Cài Graylog Server](#cd)
+		*	[2.2. Cấu hình Input](#chinput)
+		*	[2.3 Demo tạo Dashboard](#dm)
+		
 ## I. Log trong Linux
+<a name="log"> </a> 
 Một trong những điều khiến GNU/Linux trở thành một hệ điều hành tuyệt vời đó là các thông tin về mọi thứ diễn ra trong hệ thống, hay những ứng dụng
  chạy trên nó sẽ luôn được ghi lại. Mỗi khi có sự cố xảy ra - và thực sự nó rất thường xuyên xảy ra, thì những thông tin này trở nên vô cùng quý giá trong việc 
 khắc phục. Các thông tin trên thường được ghi lại dưới dạng văn bản, được gọi là cái file log.
@@ -35,7 +47,11 @@ Dựa vào các trải nghiệm khi làm việc với các giải pháp log tậ
  tôi xin được giới thiệu giải pháp log tập trung đang được tôi tin dùng, đó là Graylog.
 
 ## II. Giới thiệu về Graylog
+<a name="gt"> </a> 
+
 ###1. Giới thiệu chung
+<a name="gtc"> </a> 
+
  Graylog là phần mềm mã nguồn mở quản lý log tập trung, bắt đầu phát triển vào 2010 bởi Lennart Koopman (người Đức) với tên Graylog2. Vào tháng 
  2 năm 2014, phiên bản Graylog2 version 0.20.0 chính thức được phát hành. Vào tháng 1 năm 2015, phiên bản Graylog 1.0 Beta
 ra đời, đổi tên từ Graylog2 thành Graylog, và Graylog Inc được thành lập. 
@@ -43,6 +59,8 @@ ra đời, đổi tên từ Graylog2 thành Graylog, và Graylog Inc được th
  Từ version 1.0, Graylog đã trải qua 5 phiên bản, version mới nhất là Graylog 2.0.3, phiên bản ổn định là Graylog 1.3.
  
 ###2. Đặc điểm nổi bật
+<a name="dd"> </a> 
+
 - Việc triển khai và cài đặt dễ dàng.
 - Graylog có thể nhận log từ rất nhiều khác nhau : log của các server Linux, Window, thiết bị mạng như router, switch, firewall, các thiết bị 
 lưu trữ như CEPH.
@@ -57,6 +75,8 @@ thập log như nx-log, hay logstash, bạn có thể thu thập log từ chính
 tới bên thứ 3 sử dụng.
 
 ###3. Cấu trúc logical
+<a name="ct"> </a> 
+
 ![NOTE4](images/i4.png)
 Graylog có 4 thành phần chính :
 - Graylog Server:  Nhận, xử lý các bản tin và truyền thông với các thành phần khác – Cần CPU. 
@@ -69,6 +89,8 @@ Trong mô hình này, Graylog sử dụng lại 2 opensource software có sẵn 
 Từ phiên bản Graylog 2.0, thành phần web-interface đuọc tích hợp cùng với graylog-server.
 
 ###4. Mô hình triển khai
+<a name="mh"> </a> 
+
 Dựa vào document của Graylog, có 2 mô hình được khuyến cáo sử dụng. 
 
 **Mô hình Minimum setup.**
@@ -84,26 +106,32 @@ Cả 4 thành phần của Graylog được cấu hình trên cùng 1 con server
 Các thành phần của Graylog được tách riêng, và ta có thể triển khai các cơ chế như Load Balancer, HA, Cluster
 cho từng thành phần.
 
-##III. Triển khai Graylog trên mô hình OpenStack Mitaka
+##III. Triển khai Graylog với mô hình OpenStack Mitaka
+<a name="tk"> </a> 
 
 Tôi sẽ triển khai phiên bản Graylog ổn định nhất là version 1.3
 
 ###1. Cấu hình máy Graylog Server
+<a name="chm"> </a> 
+
 <li>OS: Ubuntu Server 14.04 64 bit</li>
 <li>RAM: 4GB</li>
 <li>CPU: 2x2</li>
 <li>NIC1: eth1: 172.16.69.0/24, gateway 172.16.69.1 (sử dụng card NAT hoặc Bridge VMware Workstation)</li>
 <li>HDD: +60GB</li>
 ###2. Chạy script
+<a name="sc"> </a> 
+
 #### Mô hình 
 ![Graylogmodel](images/i3.png)
 
-####2.1 : Cài Graylog Server
+####2.1. Cài Graylog Server
+<a name="cd"> </a> 
 
  - Với Graylog Server
  
  ```sh
- wget https://raw.githubusercontent.com/manhdinh/ghichep-graylog/master/graylog/graylog-scripts/graylog-server.sh
+ wget https://raw.githubusercontent.com/vietstacker/Monitor-Logging-OpenStack/master/scipts/graylog-server.sh
  bash graylog-server.sh
  ```
 
@@ -117,8 +145,11 @@ Tôi sẽ triển khai phiên bản Graylog ổn định nhất là version 1.3
  - Ấn phím *ENTER* để tiếp tục
  
  ![NOTE2](images/i2.png)
+
+ Sau đó đợi script chạy hết.
  
 ####2.2. Cấu hình Input cho Graylog trên Web-interface
+<a name="chinput"> </a> 
 
 #####Step1 : 
 
@@ -150,10 +181,12 @@ Sau khi launch xong input, cần có 2 phần của Input cần lưu ý
 2 : Quản lý các extractor được tạo ở phần searching. Tham khảo về [Extractorơ](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md) ở mục 6.2.
 
 ####2.3. Cấu hình Graylog Collector trên 2 node Controller và Compute
+<a name="chcollector"> </a> 
+
 Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép bạn chỏ cụ thể data từ log files tới một Graylog Cluster. Collector có thể đọc log files local ( Ví dụ apache, openvpn,...), nói chung bất cứ dịch vụ nào có ghi log.
 - Trên node Controller :
 ```sh
-wget https://raw.githubusercontent.com/manhdinh/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
+wget https://raw.githubusercontent.com/vietstacker/Monitor-Logging-OpenStack/master/scipts/graylog-collector.sh
 bash graylog-collector.sh
 ```
 Ta sẽ lấy một số log cơ bản và log của các service OpenStack trên máy Controller
@@ -182,6 +215,7 @@ Log từ file **/var/log/apache2/access.log** đã được đẩy về Graylog
 Làm tương tự theo các bước tại node Controller, chỉ thay đổi phần input tại file **/etc/graylog/collector/collector.conf**
 
 ####2.3 Demo tạo Dashboard thống kê số đăng nhập Horizon thất bại, list ra user đăng nhập thất bại.
+<a name="dm"> </a> 
 
 **Step 1** : Tạo Dashboard có tên : Login Horizon Fail
 
