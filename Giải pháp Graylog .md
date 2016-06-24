@@ -118,7 +118,7 @@ HDD: +60GB
 
 - Đăng nhập WEB Interface của Graylog : http://IP-Graylogserver:9000
  
- ![NOTE8](images/i8.png)
+ ![NOTE8](images/ii8.png)
 
 #####Step 2 : 
 - Tạo Input trên Graylog. Input cũng giống như 1 địa chỉ, giúp các máy Client tìm đến và giao tiếp với Graylog server.
